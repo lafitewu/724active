@@ -1,0 +1,436 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+<title>活动</title>
+
+<link href="css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="js/awardRotate.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?3ec9d0208432d4b2ed8c07718a618996";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</head>
+<body>
+	<!-- 首页 -->
+	<div class="home_page">
+		<div class="top_banner">
+			<img src="images/default_bg.png"/>
+		</div>
+		<!-- 悬浮按钮 -->
+		<div class="xuan_btn xuan_rules"><a href=".rules">规则</a></div>
+		<div class="xuan_btn xuan_tudi">徒弟列表<img src="images/normal_turn_in_icon.png"/></div>
+		<!-- 我的徒弟 -->
+		<!-- <div class="tudi">
+			<div class="tudi_action">
+				<div class="tudi_icon">
+					<span>徒弟数量</span>
+					<div class="tudi_num tudi_num1"><font>0</font>个</div>
+				</div>
+				<div class="tudi_icon">
+					<span>有效徒弟</span>
+					<div class="tudi_num tudi_num2"><font>0</font>个</div>
+				</div>
+				<div class="tudi_icon">
+					<span>活动收益</span>
+					<div class="tudi_num tudi_num3"><font>0</font>元</div>
+				</div>
+			</div>
+				<div class="tudi_study">
+					<span>收徒列表</span>
+					<img src="images/normal_turn_in_icon.png" alt="arrow"/>
+				</div>
+		</div> -->
+		<!-- 我的徒弟end -->
+		<!-- 724时间 -->
+		<div class="Active_time">2018年7月19日—2018年7月31日</div>
+
+		<!-- 702 我的徒弟 -->
+		<div class="tuDi">
+			<div class="new_tudi">
+				<img class="new_tudi_pic" src="images/data_line_bg.png">
+				<div class="new_tudi_title">
+					<div class="new_t_t_middle"><font>￥</font><span>0.00</span></div>
+					<div class="new_t_t_bottom">我的收益</div>
+				</div>
+				<div class="new_title_icon">
+					<div class="new_title_left">
+						<img src="images/default_pupil_icon.png">
+						<div class="new_t_l_font">
+							<font>徒弟数量</font><br/>
+							<span>0</span>
+						</div>
+					</div>
+
+					<div class="new_title_right">
+						<img src="images/default_effect_pupil_icon.png">
+						<div class="new_t_l_font">
+							<font>有效徒弟</font><br/>
+							<span>0</span>
+						</div>
+					</div>
+
+					<div class="new_title_middle">
+						<img src="images/default_fail_pupil_icon.png">
+						<div class="new_t_l_font">
+							<font>异常徒弟</font><br/>
+							<span>0</span>
+						</div>
+					</div>
+				</div>
+				<div class="new_tudi_Btn">
+					<img src="images/defatult_invite_btn.png" alt="defatult_invite_btn"/>
+					<span>我的徒弟列表</span>
+				</div>
+			</div>
+		</div>
+		<!-- 排行 -->
+		<div class="rank_bg">
+			<div class="rank">
+				<div class="new_rank_title">
+					<img src="images/title_line_left.png">
+					<span>排行榜</span>
+					<img src="images/title_line_left.png">
+				</div>
+				<!-- <div class="rank_borad">
+					<img src="images/board_img.png"/>
+				</div> -->
+				<div class="rank_list rank_one rank_list1">
+					<div class="rank_pic">
+						<img src="images/default_quesiton_icon.png"/>
+					</div>
+					<div class="rank_name"></div>
+					<div class="rank_gift">***</div>
+				</div>
+
+				<div class="rank_list rank_two rank_list2">
+					<div class="rank_pic">
+						<img src="images/default_quesiton_icon.png"/>
+					</div>
+					<div class="rank_name"></div>
+					<div class="rank_gift">***</div>
+				</div>
+				
+				<div class="rank_list rank_three rank_list3">
+					<div class="rank_pic">
+						<img src="images/default_quesiton_icon.png"/>
+					</div>
+					<div class="rank_name"></div>
+					<div class="rank_gift">***</div>
+				</div>
+			</div>
+			<!-- 上榜 -->
+			<div class="go_rank">
+				<span>查看排行榜</span>
+				<!-- <img src="images/normal_turn_in_icon.png" alt="arrow"/> -->
+			</div>
+		</div>
+
+		<!-- 阶段奖励 -->
+		<div class="award">
+			<img class="award_title" src="images/default_list_title.png"/>
+			<div class="aw_title_font">已领奖励<span>0</span>元</div>
+			<div class="award_main">
+				<div class="award_main_title">
+					<div class="award_main_name">正在进行中：</div>
+					<div class="award_main_progess">
+						<div class="a_mian_p_p">
+							<div class="a_mian_fill"></div>
+						</div>
+						<div class="a_mian_pic">
+							<!-- <img src="images/default_list_header_icon.png"/> -->
+							<span class="a_mian_oder">1</span>/<span class="a_mian_oder2">2</span>
+						</div>
+					</div>
+				</div>
+				<div class="award_main_content">
+					<!-- 绝对定位铺路 -->
+					<img class="road road1" src="images/default_road_1.png"/>
+					<img class="road road2" src="images/default_road_1.png"/>
+					<img class="road road3" src="images/default_road_3.png"/>
+					<img class="road road4" src="images/default_road_2.png"/>
+					<img class="road road5" src="images/default_road_2.png"/>
+					<img class="road road6" src="images/default_road_3.png"/>
+					<img class="road road7" src="images/default_road_1.png"/>
+					<img class="road road8" src="images/default_road_1.png"/>
+					<img class="road road9" src="images/default_road_3.png"/>
+					<img class="road road10" src="images/default_road_2.png"/>
+					<img class="road road11" src="images/default_road_2.png"/>
+					<img class="road road12" src="images/default_road_3.png"/>
+
+					<div class="award_con_list lafite_list1">
+						<img class="award_bg" src="images/default_wait_reward_img_1.png"/>
+						<div class="aw_con_list_font">
+							<div class="aw_lafite_num"><span>4.5</span>元</div>
+							<span class="aw_tudi">收徒<font>1</font>名</span>
+						</div>
+					</div>
+					<div class="award_con_list lafite_list2 award_con_middle">
+						<img class="award_bg" src="images/default_wait_reward_img_1.png"/>
+						<div class="aw_con_list_font">
+							<div><span>10</span>元</div>
+							<span class="aw_tudi">收徒<font>2</font>名</span>
+						</div>
+					</div>
+					<div class="award_con_list lafite_list3">
+						<img class="award_bg" src="images/default_wait_reward_img_1.png"/>
+						<div class="aw_con_list_font">
+							<div><span>15</span>元</div>
+							<span class="aw_tudi">收徒<font>3</font>名</span>
+						</div>
+					</div>
+					
+					<div class="award_con_list lafite_list6">
+						<img class="award_bg" src="images/default_wait_reward_img_1.png"/>
+						<div class="aw_con_list_font">
+							<div><span>220</span>元</div>
+							<span class="aw_tudi">收徒<font>39</font>名</span>
+						</div>
+					</div>
+					<div class="award_con_list lafite_list5 award_con_middle">
+						<img class="award_bg" src="images/default_wait_reward_img_1.png"/>
+						<div class="aw_con_list_font">
+							<div><span>81</span>元</div>
+							<span class="aw_tudi">收徒<font>15</font>名</span>
+						</div>
+					</div>
+					<div class="award_con_list lafite_list4">
+						<img class="award_bg" src="images/default_wait_reward_img_1.png"/>
+						<div class="aw_con_list_font">
+							<div><span>42</span>元</div>
+							<span class="aw_tudi">收徒<font>8</font>名</span>
+						</div>
+					</div>
+					
+					<div class="award_con_list lafite_list7">
+						<img class="award_bg" src="images/default_wait_reward_img_1.png"/>
+						<div class="aw_con_list_font">
+							<div><span>460</span>元</div>
+							<span class="aw_tudi">收徒<font>79</font>名</span>
+						</div>
+					</div>
+					<div class="award_con_list lafite_list8 award_con_middle">
+						<img class="award_bg" src="images/default_wait_reward_img_1.png"/>
+						<div class="aw_con_list_font">
+							<div><span>720</span>元</div>
+							<span class="aw_tudi">收徒<font>120</font>名</span>
+						</div>
+					</div>
+					<div class="award_con_list lafite_list9">
+						<img class="award_bg" src="images/default_wait_reward_img_1.png"/>
+						<div class="aw_con_list_font">
+							<div><span>1550</span>元</div>
+							<span class="aw_tudi">收徒<font>250</font>名</span>
+						</div>
+					</div>
+
+					<div class="award_con_list lafite_list12">
+						<img class="award_bg" src="images/default_wait_reward_img_1.png"/>
+						<div class="aw_con_list_font">
+							<div><span>6999</span>元</div>
+							<span class="aw_tudi">收徒<font>999</font>名</span>
+						</div>
+					</div>
+					<div class="award_con_list lafite_list11 award_con_middle">
+						<img class="award_bg" src="images/default_wait_reward_img_1.png"/>
+						<div class="aw_con_list_font">
+							<div><span>4690</span>元</div>
+							<span class="aw_tudi">收徒<font>700</font>名</span>
+						</div>
+					</div>
+					<div class="award_con_list lafite_list10">
+						<img class="award_bg" src="images/default_wait_reward_img_1.png"/>
+						<div class="aw_con_list_font">
+							<div><span>3200</span>元</div>
+							<span class="aw_tudi">收徒<font>499</font>名</span>
+						</div>
+					</div>
+
+					<div class="award_con_list_last lafite_list13">
+						<img src="images/default_wait_reward_img_2.png"/>
+						<div class="aw_con_list_font">
+							<div><span>8888</span>元</div>
+							<span class="aw_tudi">收徒<font>1200</font>名</span>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<!-- 活动规则 -->
+		<div class="rules_bg">
+			<div class="rules">
+				<img src="images/rules.png"/>
+				<ul class="rules_ul">
+					<!-- <li>1. 活动时间：7.18 18:00 — 7.31 16:00</li> -->
+					<li>1. 奖励发放时间：奖励发放延迟一小时</li>
+					<li>2. 阶梯奖励<br/>活动期间内，邀请的有效徒弟达指定人数，即获得阶梯现金奖励，最高可额外获得<span>8888元</span>。</li>
+					<li>3. 排名奖励<br/>对活动中邀请有效徒弟排名前三名者；<span>奖iPhone X、苹果笔记电脑、雅玛智能电动车</span>。</li>
+					<li>4. 有效徒弟<br/>活动期内，邀请的正常徒弟给您贡献120金币<span>5次</span>以上；即视为<span>有效徒弟</span>。<br/>注：徒弟阅读文章获得400金币，即给您贡献120金币一次。</li>
+					<li>5. 奖励发放:<br/>审核完成即实时发放，阶梯奖励在上一阶梯的基础上发放，达到第一个阶梯奖励4.5元，达到第二个阶梯再奖励5.5元，总共一起为10元;达到第三个阶梯再奖励5元，总共为15元，以此类推。</li>
+					<!-- <li class="rules_specil">郑重声明:为保证活动的公平性，对于存在违规收徒（违规收徒包含但不限于以下行为：一个手机注册登录多个账号、虚拟号、徒弟无后续行为或行为异常等）行为的用户，平台将取消其参加活动的资格，并扣除所有奖励，请遵守平台规则，正常邀请收徒。本活动最终解释权归悦头条所有。</li> -->
+					<li>6.奖励查询：<br/>活动奖励可至APP【我的】——>【收入明细】查看；</li>
+					<li>7.作弊说明:<br/>为保证活动的公平性，对于存在违规收徒<b>（违规收徒包含但不限于以下行为：一个手机注册登录多个账号、虚拟号、徒弟无后续行为或行为异常等）</b>行为的用户，平台有权利取消其参加活动的资格，扣除奖励，同时异常徒弟将不再纳入有效徒弟奖励范围内，请遵守平台规则，正常邀请收徒。本活动最终解释权归悦头条所有。</li>
+				</ul>
+			</div>
+		</div>
+		<!-- <div class="add_block">
+			<img src="images/list_bottom_img.png"/>
+		</div> -->
+		<div class="display_block"></div>
+		<!-- 底部btn -->
+		<div class="footer">
+			<!-- <div class="footer_btn footer_left">幸运大抽奖</div> -->
+			<a class="lafite_phone" href="function://callapp?f=test&title=高温福利，狂赚8888元&description=0门槛，邀请有效即奖励，最高赚8888元。1元可提现，你来下载提现试试！&image=http://hbhunter.oss-cn-qingdao.aliyuncs.com/yuetoutiao/Material/zd_51.png&link=http://url.cn/5UTcSl0&callback=shareDone"><div class="footer_btn footer_right">立领8888元</div></a>
+		</div>
+	</div>
+
+	<!-- 邀请总榜 -->
+	<div class="rank_page">
+		<div class="rank_page_banner">
+			<img src="images/list_bg.png" width="100%"/>
+		</div>
+		<div class="xuan_btn xuan_home"><img src="images/normal_return_icon.png"/>活动首页</div>
+		<div class="rank_page_png">
+			<img src="images/list_board_img.png" width="100%"/>
+		</div>
+		<div class="rank_page_main">
+			<div class="rank_page_main_font">有效徒弟排行榜，每小时更新一次<br>活动结束后，前三名可以获得丰富奖励</div>
+			<div class="rank_page_now">
+				您当前排名:<span>0</span>, 距离前一名差<font>0</font>人
+			</div>
+			<div class="rank_page_three">
+				<div class="rank_page_lists rank_page_lists1">
+					<div class="r_page_list_num r_page_num1">
+						<img src="images/title_flag_1.png" alt="flag1"/>
+					</div>
+					<div class="rank_content">
+						<div class="rank_content_pic">
+							<img src="images/reward_flag_1.png" alt="icon1"/>
+						</div>
+						<div class="rank_content_font">
+							<div class="r_c_font_pic">
+								<img class="r_c_font_header" src="images/default_list_header_icon.png" alt="头像"/>
+								<img class="r_c_font_icon" src="images/reward_header_1.png"/>
+							</div>
+							<div class="r_c_font_name">***</div>
+							<span>|</span>
+							<div class="r_c_font_num">***</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="rank_page_lists rank_page_lists2">
+					<div class="r_page_list_num r_page_num2">
+						<img src="images/title_flag_2.png" alt="flag2"/>
+					</div>
+					<div class="rank_content">
+						<div class="rank_content_pic">
+							<img src="images/reward_flag_2.png" alt="icon1"/>
+						</div>
+						<div class="rank_content_font">
+							<div class="r_c_font_pic">
+								<img class="r_c_font_header" src="images/default_list_header_icon.png" alt="头像"/>
+								<img class="r_c_font_icon" src="images/reward_header_2.png"/>
+							</div>
+							<div class="r_c_font_name">***</div>
+							<span>|</span>
+							<div class="r_c_font_num">***</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="rank_page_lists rank_page_lists3">
+					<div class="r_page_list_num r_page_num3">
+						<img src="images/title_flag_3.png" alt="flag3"/>
+					</div>
+					<div class="rank_content">
+						<div class="rank_content_pic">
+							<img src="images/reward_flag_3.png" alt="icon1"/>
+						</div>
+						<div class="rank_content_font">
+							<div class="r_c_font_pic">
+								<img class="r_c_font_header" src="images/default_list_header_icon.png" alt="头像"/>
+								<img class="r_c_font_icon" src="images/reward_header_3.png"/>
+							</div>
+							<div class="r_c_font_name">***</div>
+							<span>|</span>
+							<div class="r_c_font_num">***</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="r_page_table">
+				<table cellspacing="0">
+					<tr class="r_page_t1">
+						<td>排名</td>
+						<td>昵称</td>
+						<td>有效徒弟</td>
+					</tr>
+					<tr class="r_false"></tr>
+				</table>
+			</div>
+		</div>
+		<div class="display_block"></div>
+		<!-- 底部btn -->
+		<div class="footer">
+			<!-- <div class="footer_btn footer_left">幸运大抽奖</div> -->
+			<a class="lafite_phone" href="function://callapp?f=test&title=高温福利，狂赚8888元&description=0门槛，邀请有效即奖励，最高赚8888元。1元可提现，你来下载提现试试！&image=http://hbhunter.oss-cn-qingdao.aliyuncs.com/yuetoutiao/Material/zd_51.png&link=http://url.cn/5UTcSl0&callback=shareDone"><div class="footer_btn footer_right">立领8888元</div></a>
+		</div>
+	</div>
+
+	<!-- 收徒总榜 -->
+	<div class="tudi_all">
+		<div class="tudi_all_banner">
+			<img src="images/tudi_bg.png"/>
+		</div>
+		<div class="xuan_btn xuan_home">返回首页</div>
+		<div class="tudi_content">
+			<div class="tudi_bg"></div>
+			<div class="tudi_con_table">
+				<table>
+					<tr class="tudi_con_tab_tr">
+						<td>徒弟昵称</td>
+						<td>邀请时间</td>
+						<td>徒弟状态</td>
+					</tr>
+					<tr class="tudi_false"></tr>
+				</table>
+			</div>
+			<div class="table_page">
+				<div class="table_page_left">上一页</div>
+				<div class="table_page_middle">
+					<span>0</span>/<font>0</font>
+				</div>
+				<div class="table_page_right">下一页</div>
+			</div>
+		</div>
+		<div class="r_page_invite">
+			<div class="active_all_top">
+				<img src="images/title_phone_icon.png" alt="active_icon"/><span>手把手教您快速收徒</span>
+			</div>
+			<img class="invite_skill" src="images/process_img.png" alt="invite_skill"/>
+			<div class="invite_skill_font">
+				<div>点击下面按钮<br>分享给好友</div>
+				<div>好友打开链接<br>并下载APP</div>
+				<div>好友登录阅读<br>您获得红包</div>
+			</div>
+			<!-- <div class="special_notice">
+				<div>特别说明：新徒弟需要在新设备上注册（之前未登录过悦头条的手机） + 有效阅读文章5篇才可以获得奖励</div>
+			</div> -->
+			<a class="lafite_phone" href="function://callapp?f=test&title=高温福利，狂赚8888元&description=又到账了！一起看新闻，最高赚28888元，1元可提现，你来下载提现试试！&image=http://hbhunter.oss-cn-qingdao.aliyuncs.com/yuetoutiao/Material/shera_wx_icon.png&link=http://url.cn/5UTcSl0&callback=shareDone">分享收徒</a>
+		</div>
+	</div>
+</body>
+</html>
