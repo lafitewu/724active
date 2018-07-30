@@ -2,9 +2,9 @@ $(function() {
 	function iphone() {
 		var u = navigator.userAgent;
 		if (u.indexOf('Android') > -1 || u.indexOf('Linux') > -1) {//安卓手机
-			$(".lafite_phone").attr("href","function://callapp?f=test&title=高温福利，狂赚8888元&description=0门槛，邀请有效即奖励，最高赚8888元。1元可提现，你来下载提现试试！&image=http://chuantu.biz/t6/344/1531825337x-1404817724.png&link=http://url.cn/5UTcSl0&callback=shareDone");
+			$(".lafite_phone").attr("href","function://callapp?f=test&title=哇！我又拆了一个18元红包！&description=看资讯，拆红包，1元可提现，快来下载领取！>>&image=http://chuantu.biz/t6/344/1531825337x-1404817724.png&link=http://url.cn/5UTcSl0&callback=shareDone");
 		} else if (u.indexOf('iPhone') > -1) {//苹果手机
-			$(".lafite_phone").attr("href","function://callapp?f=showShareView&title=高温福利，狂赚8888元&description=0门槛，邀请有效即奖励，最高赚8888元。1元可提现，你来下载提现试试！&image=http://chuantu.biz/t6/344/1531825337x-1404817724.png&link=http://url.cn/5UTcSl0&callback=shareDone");
+			$(".lafite_phone").attr("href","function://callapp?f=showShareView&title=哇！我又拆了一个18元红包！&description=看资讯，拆红包，1元可提现，快来下载领取！>>&image=http://chuantu.biz/t6/344/1531825337x-1404817724.png&link=http://url.cn/5UTcSl0&callback=shareDone");
 		} else if (u.indexOf('Windows Phone') > -1) {//winphone手机
 		// alert("winphone手机");
 		// window.location.href = "mobile/index.html";
@@ -15,7 +15,7 @@ $(function() {
 		var H = $(window).height(),
 			W = $(window).width();
 		$(".cover").css({"width": W, "height": H});
-		$(".go_rank,.rank").click(function() {
+		$(".go_rank,.rank,.xuan_rank").click(function() {
 			$(".home_page").hide();
 			$(".rank_page").fadeIn(500);
 		});
@@ -30,12 +30,16 @@ $(function() {
 			$(".turntable-bg").fadeIn(300);
 		});
 		$(".xuan_home").click(function() {
-			$(".rank_page,.tudi_all").hide();
+			$(".rank_page,.tudi_all,.rules_page").hide();
 			$(".home_page").fadeIn(300);
 		});
-		$(".xuan_rules a").click(function () {
-		    $("html, body").animate({scrollTop: $($(this).attr("href")).offset().top -0+ "rem"}, 500);
-		    return false;
+		// $(".xuan_rules a").click(function () {
+		//     $("html, body").animate({scrollTop: $($(this).attr("href")).offset().top -0+ "rem"}, 500);
+		//     return false;
+		// });
+		$(".xuan_rules").click(function () {
+		    $(".home_page").hide();
+		    $(".rules_page").fadeIn(300);
 		});
 		$(".tudi,.xuan_tudi,.new_tudi").click(function() {
 			$(".home_page").hide();
@@ -57,16 +61,17 @@ $(function() {
 	}
 	var uid = getQueryString('uid');
 	var token = getQueryString('token');
-	var uid1 = "12345678";
-	var token1 = "eb6451cd-9522-40fe-9408-388522333e62";
-	var hostname = "http://callback.ytoutiao.net";
-	var testname = "http://182.92.82.188:8084";
+	// var uid = "999999999999";
+	// var token = "8e3a2a6a-7175-4cde-ad4c-8a983e383f63";
+	// var hostname = "http://callback.ytoutiao.net";
+	var hostname = "http://182.92.82.188:8084";
 	function Ajaxfn() {
 		var Url1 = hostname+"/yfax-htt-api/api/htt/queryHolidayActivityRanking";
 		var Url2 = hostname+"/yfax-htt-api/api/htt/queryHolidayActivityInviteUser";
 		var Url4 = hostname+"/yfax-htt-api/api/htt/queryHolidayActivityStudentList";
+		var Url5 = hostname+"/yfax-htt-api/api/htt/doHolidayActivityAward";
 		$.get(Url1,{"phoneNum": uid,"access_token": token},function(res){
-			
+			console.log(res);
 			var now_rank = res.data.userRanking,
 				up_rank = res.data.newRealUserGap;
 		    // 前三名数据渲染
@@ -113,70 +118,117 @@ $(function() {
 		    
 		});
 
-		// 九宫格 
+		// 724活动新增
 		$.get(Url2,{"phoneNum": uid,"access_token": token}, function(res){
-			// var Img = res.data.headImgUr || "images/default_list_header_icon.png";
-			// $(".a_mian_pic img").attr("src",Img);
-			console.log(res);
-			$(".cover_num span").text(res.data.remainLotteryTimes);
-			if(res.data.remainLotteryTimes <= 0) {
-			}
-			var invite_tudi = res.data.inviteUserCount,
-				use_tudi = res.data.realUserCount,
-				income = res.data.allIncome,
-				indexs,
-				curStep = parseFloat(res.data.curStep);
-				// curStep = 15;
-			$(".new_title_left .new_t_l_font span").text(invite_tudi);
-			$(".new_title_right .new_t_l_font span").text(use_tudi);
-			$(".new_t_t_middle span").text(income);
-			$(".a_mian_oder").text(use_tudi);
-			console.log(curStep);
-			for(var i = 0; i < 13; i++) {
-				if($(".lafite_list"+(i+1)+" .aw_con_list_font div span").text() == curStep) {
-					indexs = i;
+			var inviteUserCount = res.data.inviteUserCount,
+				realUserCount = res.data.realUserCount,
+				deductUserCount = res.data.deductUserCount,
+				allIncome = res.data.allIncome;
+			console.log(res.data);
+			$(".new_title_left .new_t_l_font span").text(inviteUserCount);
+			$(".new_title_right .new_t_l_font span").text(realUserCount);
+			$(".new_title_middle .new_t_l_font span").text(deductUserCount);
+			$(".new_t_t_middle span").text(allIncome);
+
+			function newjiuFn() {
+				var nowStep = res.data.dataList.length;
+				for(var j = 0; j < nowStep; j++) {
+					if(res.data.dataList[j].isDelete == 1) {
+						$(".award_red_pic").eq(j).attr("src","images/default_redbag_reward.png");
+						$(".award_red_pointer").eq(j).hide();
+						$(".award_red_qian").eq(j).show().find("span").text(res.data.dataList[j].curStep);
+					}
 				}
-			}
-			var all_num = $(".lafite_list"+(indexs+2)+" .aw_tudi font").text() || 2;
-			$(".a_mian_oder2").text(all_num);
-			$(".aw_title_font span").text($(".lafite_list"+(indexs+1)+" .aw_con_list_font div span").text() || 0);
-
-			// 进度条长度
-			var Wid = (use_tudi/all_num)*100;
-			if((Wid/100) > 1) {
-				$(".a_mian_fill").css("width","100%");
-			}else {
-				$(".a_mian_fill").css("width",Wid+"%");
-			}
-
-			// 九宫格默认样式
-			if($(".aw_tudi font").eq(indexs+1).text() == 0) {
-				$(".a_mian_fill").css("width","50%");
-				$(".award_con_list img").eq(0).attr("src","images/default_selected_reward_img_1.png");
-				$(".lafite_list1 .aw_con_list_font div").css("color","#FFEE2D");
-				$(".lafite_list1 .aw_con_list_font div span").css("color","#FFEE2D");
-				$(".lafite_list1 .aw_con_list_font .aw_tudi").css("color","white");
-			}else {
-				// 即将完成样式
-				if(indexs == 11) {
-					$(".lafite_list"+(indexs+2)+" img").attr("src","images/default_selected_reward_img_2.png");
-				}else {
-					$(".lafite_list"+(indexs+2)+" img").attr("src","images/default_selected_reward_img_1.png");
+				for(var i = nowStep,Len = $(".award_red").length;i < Len;i++) {
+					$(".award_red").eq(i).css({"opacity":".5","pointer-events":"none"});
 				}
-				
-				$(".lafite_list"+(indexs+2)+" .aw_con_list_font div").css("color","#FFEE2D");
-				$(".lafite_list"+(indexs+2)+" .aw_con_list_font div span").css("color","#FFEE2D");
-				$(".lafite_list"+(indexs+2)+" .aw_con_list_font .aw_tudi").css("color","white");
-			}
-			
-			// 已完成 
-			for(var j = 0;j < indexs+1; j++) {
-				$(".lafite_list"+(j+1)+" .aw_con_list_font div").html('<img src="images/default_already_img.png"/>');
-			}
+				$(".award_red_pointer").click(function() {
+					var Index = $(this).parent().index()-2;
+					// console.log($(this).parent().index()-2);
+					var Id = res.data.dataList[Index].id;
+					console.log(Id);
+					$.post(Url5,{"id": Id,"access_token": token,"phoneNum": uid}, function(res){
 
-			// console.log(res);
-			
+						$(".alert_money_font span").text(res.data);
+						setTimeout(function() {
+							$(".award_red_pic").eq(Index).attr("src","images/default_redbag_reward.png");
+							$(".award_red_pointer").eq(Index).hide();
+							$(".award_red_qian").eq(Index).show().find("span").text(res.data);
+						},2000)
+					});
+					$(".alert_money").show();
+					setTimeout(function() {
+						$(".alert_money").hide();
+					},2000);
+				})
+			}
+			newjiuFn();
 		});
+
+		// 九宫格 
+		// $.get(Url2,{"phoneNum": uid,"access_token": token}, function(res){
+		// 	// var Img = res.data.headImgUr || "images/default_list_header_icon.png";
+		// 	// $(".a_mian_pic img").attr("src",Img);
+		// 	console.log(res);
+		// 	$(".cover_num span").text(res.data.remainLotteryTimes);
+		// 	if(res.data.remainLotteryTimes <= 0) {
+		// 	}
+		// 	var invite_tudi = res.data.inviteUserCount,
+		// 		use_tudi = res.data.realUserCount,
+		// 		income = res.data.allIncome,
+		// 		indexs,
+		// 		curStep = parseFloat(res.data.curStep);
+		// 		// curStep = 15;
+		// 	$(".new_title_left .new_t_l_font span").text(invite_tudi);
+		// 	$(".new_title_right .new_t_l_font span").text(use_tudi);
+		// 	$(".new_t_t_middle span").text(income);
+		// 	$(".a_mian_oder").text(use_tudi);
+		// 	console.log(curStep);
+		// 	for(var i = 0; i < 13; i++) {
+		// 		if($(".lafite_list"+(i+1)+" .aw_con_list_font div span").text() == curStep) {
+		// 			indexs = i;
+		// 		}
+		// 	}
+		// 	var all_num = $(".lafite_list"+(indexs+2)+" .aw_tudi font").text() || 2;
+		// 	$(".a_mian_oder2").text(all_num);
+		// 	$(".aw_title_font span").text($(".lafite_list"+(indexs+1)+" .aw_con_list_font div span").text() || 0);
+
+		// 	// 进度条长度
+		// 	var Wid = (use_tudi/all_num)*100;
+		// 	if((Wid/100) > 1) {
+		// 		$(".a_mian_fill").css("width","100%");
+		// 	}else {
+		// 		$(".a_mian_fill").css("width",Wid+"%");
+		// 	}
+
+		// 	// 九宫格默认样式
+		// 	if($(".aw_tudi font").eq(indexs+1).text() == 0) {
+		// 		$(".a_mian_fill").css("width","50%");
+		// 		$(".award_con_list img").eq(0).attr("src","images/default_selected_reward_img_1.png");
+		// 		$(".lafite_list1 .aw_con_list_font div").css("color","#FFEE2D");
+		// 		$(".lafite_list1 .aw_con_list_font div span").css("color","#FFEE2D");
+		// 		$(".lafite_list1 .aw_con_list_font .aw_tudi").css("color","white");
+		// 	}else {
+		// 		// 即将完成样式
+		// 		if(indexs == 11) {
+		// 			$(".lafite_list"+(indexs+2)+" img").attr("src","images/default_selected_reward_img_2.png");
+		// 		}else {
+		// 			$(".lafite_list"+(indexs+2)+" img").attr("src","images/default_selected_reward_img_1.png");
+		// 		}
+				
+		// 		$(".lafite_list"+(indexs+2)+" .aw_con_list_font div").css("color","#FFEE2D");
+		// 		$(".lafite_list"+(indexs+2)+" .aw_con_list_font div span").css("color","#FFEE2D");
+		// 		$(".lafite_list"+(indexs+2)+" .aw_con_list_font .aw_tudi").css("color","white");
+		// 	}
+			
+		// 	// 已完成 
+		// 	for(var j = 0;j < indexs+1; j++) {
+		// 		$(".lafite_list"+(j+1)+" .aw_con_list_font div").html('<img src="images/default_already_img.png"/>');
+		// 	}
+
+		// 	// console.log(res);
+			
+		// });
 
 			// var page1 = 1;
 			function showpage() {
