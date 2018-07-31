@@ -2,9 +2,9 @@ $(function() {
 	function iphone() {
 		var u = navigator.userAgent;
 		if (u.indexOf('Android') > -1 || u.indexOf('Linux') > -1) {//安卓手机
-			$(".lafite_phone").attr("href","function://callapp?f=test&title=哇！我又拆了一个18元红包！&description=看资讯，拆红包，1元可提现，快来下载领取！>>&image=http://chuantu.biz/t6/344/1531825337x-1404817724.png&link=http://url.cn/5UTcSl0&callback=shareDone");
+			$(".lafite_phone").attr("href","function://callapp?f=test&title=哇！我又拆了一个18元红包！&description=看资讯，拆红包，1元可提现，快来下载领取！>>&image=http://chuantu.biz/t6/351/1533017411x-1404817760.png&link=http://url.cn/5UTcSl0&callback=shareDone");
 		} else if (u.indexOf('iPhone') > -1) {//苹果手机
-			$(".lafite_phone").attr("href","function://callapp?f=showShareView&title=哇！我又拆了一个18元红包！&description=看资讯，拆红包，1元可提现，快来下载领取！>>&image=http://chuantu.biz/t6/344/1531825337x-1404817724.png&link=http://url.cn/5UTcSl0&callback=shareDone");
+			$(".lafite_phone").attr("href","function://callapp?f=showShareView&title=哇！我又拆了一个18元红包！&description=看资讯，拆红包，1元可提现，快来下载领取！>>&image=http://chuantu.biz/t6/351/1533017411x-1404817760.png&link=http://url.cn/5UTcSl0&callback=shareDone");
 		} else if (u.indexOf('Windows Phone') > -1) {//winphone手机
 		// alert("winphone手机");
 		// window.location.href = "mobile/index.html";
