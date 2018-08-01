@@ -2,9 +2,9 @@ $(function() {
 	function iphone() {
 		var u = navigator.userAgent;
 		if (u.indexOf('Android') > -1 || u.indexOf('Linux') > -1) {//安卓手机
-			$(".lafite_phone").attr("href","function://callapp?f=test&title=哇！我又拆了一个18元红包！&description=看资讯，拆红包，1元可提现，快来下载领取！>>&image=http://chuantu.biz/t6/351/1533017411x-1404817760.png&link=http://url.cn/5UTcSl0&callback=shareDone");
+			$(".lafite_phone").attr("href","function://callapp?f=test&title=哇！我又拆了一个18元红包！&description=看资讯，拆红包，1元可提现，快来下载领取！>>&image=http://chuantu.biz/t6/351/1533084238x-1566688359.png&link=http://url.cn/5UTcSl0&callback=shareDone");
 		} else if (u.indexOf('iPhone') > -1) {//苹果手机
-			$(".lafite_phone").attr("href","function://callapp?f=showShareView&title=哇！我又拆了一个18元红包！&description=看资讯，拆红包，1元可提现，快来下载领取！>>&image=http://chuantu.biz/t6/351/1533017411x-1404817760.png&link=http://url.cn/5UTcSl0&callback=shareDone");
+			$(".lafite_phone").attr("href","function://callapp?f=showShareView&title=哇！我又拆了一个18元红包！&description=看资讯，拆红包，1元可提现，快来下载领取！>>&image=http://chuantu.biz/t6/351/1533084238x-1566688359.png&link=http://url.cn/5UTcSl0&callback=shareDone");
 		} else if (u.indexOf('Windows Phone') > -1) {//winphone手机
 		// alert("winphone手机");
 		// window.location.href = "mobile/index.html";
@@ -61,8 +61,8 @@ $(function() {
 	}
 	var uid = getQueryString('uid');
 	var token = getQueryString('token');
-	// var uid = "999999999999";
-	// var token = "8e3a2a6a-7175-4cde-ad4c-8a983e383f63";
+	// var uid = "164ea98beee1112";
+	// var token = "e7d1a5a6-a36a-4e59-906a-a48acfc1b5a0";
 	// var hostname = "http://callback.ytoutiao.net";
 	var hostname = "http://182.92.82.188:8084";
 	function Ajaxfn() {
@@ -143,12 +143,11 @@ $(function() {
 					$(".award_red").eq(i).css({"opacity":".5","pointer-events":"none"});
 				}
 				$(".award_red_pointer").click(function() {
-					var Index = $(this).parent().index()-2;
-					// console.log($(this).parent().index()-2);
+					var Index = $(this).parent().index()-1;
+					// console.log($(this).parent().index());
 					var Id = res.data.dataList[Index].id;
-					console.log(Id);
 					$.post(Url5,{"id": Id,"access_token": token,"phoneNum": uid}, function(res){
-
+						console.log(Index);
 						$(".alert_money_font span").text(res.data);
 						setTimeout(function() {
 							$(".award_red_pic").eq(Index).attr("src","images/default_redbag_reward.png");
